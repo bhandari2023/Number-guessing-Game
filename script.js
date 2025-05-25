@@ -1,18 +1,29 @@
 const minNum = 50;
 const maxNum = 100;
-const randomNumber = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
 
-let attempts = 0;
-let running = true;
+let randomNumber;
+let attempts;
+let running;
 
 const guessResult = document.getElementById("guessResult");
 const guessBtn = document.getElementById("guessBtn");
 const guessInput = document.getElementById("guessInput");
+const playAgainBtn = document.getElementById("playAgainBtn");
+
+function initGame() {
+    randomNumber = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+    attempts = 0;
+    running = true;
+    guessResult.textContent = "";
+    guessInput.value = "";
+    playAgainBtn.style.display = "none";
+    guessInput.focus();
+}
 
 guessBtn.onclick = function () {
     if (!running) return;
 
-    let guess = Number(guessInput.value.trim());
+    const guess = Number(guessInput.value.trim());
 
     if (isNaN(guess)) {
         guessResult.textContent = "❌ Please enter a valid number.";
@@ -31,10 +42,19 @@ guessBtn.onclick = function () {
     } else if (guess > randomNumber) {
         guessResult.textContent = "🔺 Too high! Try again.";
     } else {
-        guessResult.textContent = `🎉 Correct! You guessed ${randomNumber} in ${attempts} attempts.`;
+        guessResult.textContent = `🎉 Congratulations! You guessed ${randomNumber} in ${attempts} attempts.`;
         running = false;
+        playAgainBtn.style.display = "inline";
     }
+
+    guessInput.value = "";
+    guessInput.focus();
 };
+
+playAgainBtn.onclick = initGame;
+
+// Start the game initially
+initGame();
 
 
 
