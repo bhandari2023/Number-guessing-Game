@@ -1,0 +1,56 @@
+body{
+    background-color: hsl(51, 77%, 88%);
+    font-family: Arial, sans-serif;
+}
+
+#myCount{
+    display: block;
+    font-size: 10em;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#myButtonsDiv{
+   text-align: center;
+}
+
+.countBtn{
+    align-items: center;
+    background-color: hsl(202, 89%, 55%);
+    color: hsl(58, 75%, 81%);
+    border-radius: 10px;
+    padding: 10px 10px;
+    cursor: pointer;
+    font-size: 1em;
+}
+.countBtn:hover{
+    background-color: hsl(202, 89%, 45%);
+}   
+
+#diceRoll{
+    text-align: center;
+}
+
+#diceBtn{
+   align-items: center;
+    background-color: hsl(202, 89%, 55%);
+    color: hsl(58, 75%, 81%);
+    border-radius: 10px;
+    padding: 10px 10px;
+    cursor: pointer;
+    font-size: 1em;
+}   
+#diceBtn:hover{
+    background-color: hsl(202, 89%, 45%);
+}   
+
+#diceResult,#diceResult2,#diceResult3{
+    font-size: 2em;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+#mySubmit{
+    font-size: 1em;
+}
